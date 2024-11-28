@@ -20,7 +20,7 @@ public class BrickerGameManager extends GameManager{
     public void initializeGame(ImageReader imageReader, SoundReader soundReader, UserInputListener inputListener, WindowController windowController) {
         super.initializeGame(imageReader, soundReader, inputListener, windowController);
 
-        Renderable ballImage = imageReader.readImage("assets/ball.png", true); // עדכן את הנתיב לתמונה הנכונה
+        Renderable ballImage = imageReader.readImage("assets/ball.png", true);
         GameObject ball = new GameObject(Vector2.ZERO, new Vector2(50, 50), ballImage);
     }
     public static void main(String[] args) {
@@ -30,4 +30,4 @@ public class BrickerGameManager extends GameManager{
 
 
 }
-// update me that you see this comment!!!
+// update me that you see this comment (10:47)!!!
