@@ -3,3 +3,6 @@ public class Main {
         System.out.println("Hello world!");
     }
 }
+
+
+// i have function to matrix mult

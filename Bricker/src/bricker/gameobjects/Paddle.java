@@ -11,6 +11,7 @@ public class Paddle extends GameObject {
     private UserInputListener inputListener;
     private Vector2 windowDimensions;
 
+
     // Constructor for user paddle
     public Paddle(Vector2 topLeftCorner, Vector2 dimensions, Renderable renderable, UserInputListener inputListener, Vector2 windowDimensions) {
         super(topLeftCorner, dimensions, renderable);
