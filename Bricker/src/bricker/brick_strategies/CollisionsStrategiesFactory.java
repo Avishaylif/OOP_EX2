@@ -68,12 +68,11 @@ public class CollisionsStrategiesFactory {
         CollisionStrategy secondCollisionStrategy;
 
         if(this.strategiesCounter ==0){
+            strategiesCounter++;
             randChoice = this.rand.nextInt(BASIC_STRATEGY_CHOICE)+BASIC_STRATEGY_CHOICE;
             firstCollisionStrategy = chooseStrategy(randChoice,collisionStrategy);
             randChoice = this.rand.nextInt(BASIC_STRATEGY_CHOICE)+BASIC_STRATEGY_CHOICE;
             secondCollisionStrategy =chooseStrategy(randChoice,collisionStrategy);
-            strategiesCounter++;
-
         }else{
             randChoice = this.rand.nextInt(DOUBLE_STRATEGY_CHOICE)+DOUBLE_STRATEGY_CHOICE;
             firstCollisionStrategy = chooseStrategy(randChoice,collisionStrategy);
