@@ -10,9 +10,9 @@ import danogl.util.Vector2;
  * Represents a ball in the game with collision behavior and sound.
  */
 public class Ball extends GameObject {
-    private final String BALL_TAG = "Ball";
+    private static final String BALL_TAG = "Ball";
     private int collisionCounter = 0;
-    private Sound collisionSound;
+    private final Sound collisionSound;
 
 
     /**
@@ -54,4 +54,3 @@ public class Ball extends GameObject {
         return collisionCounter;
     }
 }
-//תוהה לעצמי אם כדאי להוסיף כאן את פונקציית הבדיקה של הכדור ביחס לחלון

@@ -1,8 +1,6 @@
 package bricker.brick_strategies;
 
 import bricker.main.BrickerGameManager;
-import danogl.gui.rendering.Renderable;
-
 import java.util.Random;
 
 /**
@@ -26,10 +24,20 @@ public class CollisionsStrategiesFactory {
     private Random rand;
     private BrickerGameManager brickerGameManager;
 
+    /**
+     * Constructs a new CollisionsStrategiesFactory instance.
+     *
+     * @param brickerGameManager The game manager responsible for managing game objects and logic.
+     */
     public CollisionsStrategiesFactory(BrickerGameManager brickerGameManager){
         this.brickerGameManager = brickerGameManager;
     }
 
+    /**
+     * Initializes a random collision strategy.
+     *
+     * @return A random collision strategy.
+     */
     public CollisionStrategy initializeStrategy(){
         strategiesCounter=0;
         this.rand = new Random();
@@ -37,6 +45,13 @@ public class CollisionsStrategiesFactory {
         return chooseStrategy(randChoice,new BasicCollisionStrategy(this.brickerGameManager));
     }
 
+    /**
+     * Chooses a collision strategy based on the random choice.
+     *
+     * @param randChoice The random choice.
+     * @param collisionStrategy The collision strategy to be wrapped.
+     * @return A collision strategy based on the random choice.
+     */
     private CollisionStrategy chooseStrategy(int randChoice, CollisionStrategy collisionStrategy){
 
         switch (randChoice){
@@ -62,6 +77,12 @@ public class CollisionsStrategiesFactory {
         }
     }
 
+    /**
+     * Creates a double collision strategy.
+     *
+     * @param collisionStrategy The collision strategy to be wrapped.
+     * @return A double collision strategy.
+     */
     private CollisionStrategy createDoubleStrategy(CollisionStrategy collisionStrategy) {
         int randChoice;
         CollisionStrategy firstCollisionStrategy;

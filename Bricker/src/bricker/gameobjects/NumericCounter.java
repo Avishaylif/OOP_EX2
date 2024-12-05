@@ -17,7 +17,6 @@ public class NumericCounter extends GameObject {
     private Renderable text;
     private int previousLivesNumber;
     private LivesCounter livesCounter;
-
     private String prompt;
     private TextRenderable textRenderable;
 
@@ -39,6 +38,15 @@ public class NumericCounter extends GameObject {
         this.textRenderable = renderable;
     }
 
+    /**
+     * This method is updated at every frame.
+     * @param deltaTime The time elapsed, in seconds, since the last frame. Can
+     *                  be used to determine a new position/velocity by multiplying
+     *                  this delta with the velocity/acceleration respectively
+     *                  and adding to the position/velocity:
+     *                  velocity += deltaTime*acceleration
+     *                  pos += deltaTime*velocity
+     */
     @Override
     public void update(float deltaTime){
         super.update(deltaTime);

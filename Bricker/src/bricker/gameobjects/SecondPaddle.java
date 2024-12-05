@@ -40,9 +40,6 @@ public class SecondPaddle extends Paddle {
         this.setTag(EXTRA_PADDLE_TAG);
     }
 
-
-
-
     /**
      * Updates the paddle's position and handles collision-specific logic.
      *

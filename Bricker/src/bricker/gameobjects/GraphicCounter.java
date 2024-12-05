@@ -14,7 +14,6 @@ public class GraphicCounter extends GameObject {
     private static final int HEART_SIZE = 20;
     private static final int HEART_SPACING = 10;
     private static final int HEART_OFFSET_FROM_BOTTOM = 30;
-
     // Class fields
     private BrickerGameManager brickerGameManager;
     private LivesCounter livesCounter;
@@ -37,7 +36,6 @@ public class GraphicCounter extends GameObject {
                           BrickerGameManager brickerGameManager) {
         //set game object
         super(topLeftCorner, dimensions, renderable);
-
         //set the fields
         this.livesCounter = livesCounter;
         this.prevLivesNum = livesCounter.getCurrentLivesNumber();
@@ -45,7 +43,8 @@ public class GraphicCounter extends GameObject {
         this.hearts = new GameObject[livesCounter.getMaxLives()];
         this.brickerGameManager.addObject(this, Layer.BACKGROUND);
         for (int i = 0; i < livesCounter.getMaxLives(); i++) {
-            Vector2 position = new Vector2(10 + i * (HEART_SIZE + HEART_SPACING), topLeftCorner.y() - HEART_SIZE - HEART_OFFSET_FROM_BOTTOM);
+            Vector2 position = new Vector2(HEART_SPACING + i * (HEART_SIZE + HEART_SPACING),
+                    topLeftCorner.y() - HEART_SIZE - HEART_OFFSET_FROM_BOTTOM);
             this.hearts[i] = new GameObject(position, dimensions, heartImage);
             if (i < livesCounter.getCurrentLivesNumber()) {
                 brickerGameManager.addObject(this.hearts[i], Layer.BACKGROUND);

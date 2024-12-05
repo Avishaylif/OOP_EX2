@@ -9,7 +9,7 @@ import danogl.util.Vector2;
  * Represents a brick in the game with collision behavior.
  */
 public class Brick extends GameObject {
-    private final String BRICK_TAG = "Brick";
+    private static final String BRICK_TAG = "Brick";
 
     /**
      * The collision strategy applied when this brick collides with another object.
@@ -24,12 +24,12 @@ public class Brick extends GameObject {
      * @param renderable The visual representation of the brick.
      * @param collisionStrategy The strategy to execute when the brick collides with another object.
      */
-    public Brick(Vector2 topLeftCorner, Vector2 dimensions, Renderable renderable, CollisionStrategy collisionStrategy) {
+    public Brick(Vector2 topLeftCorner, Vector2 dimensions, Renderable renderable,
+                 CollisionStrategy collisionStrategy) {
         super(topLeftCorner, dimensions, renderable);
         this.collisionStrategy = collisionStrategy;
         this.setTag(BRICK_TAG);
     }
-
 
     /**
      * Handles logic when the brick collides with another game object.
@@ -39,14 +39,9 @@ public class Brick extends GameObject {
      */
     @Override
     public void onCollisionEnter(GameObject other, danogl.collisions.Collision collision) {
-        // Example: Check if the colliding object is of a specific type (e.g., Ball)
-//        if (other instanceof Ball) {
-//            System.out.println("Collision detected with a ball!");
-            // Call the collision strategy
         if ((other instanceof Ball)) {
             collisionStrategy.onCollision(this, other);
         }
-
     }
 }
 
